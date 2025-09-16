@@ -26,13 +26,12 @@ class MPC(Node):
 
         self.x0 = np.array([0, 0])
         self.ref = np.array([10, 0])
-        self.R_val = 0.5
-        self.L_val = 1
-
+        self.R_val = 4
+        self.L_val = 2
         self.U0 = 0.0
     
     def timer_callback(self):
-        v_max = 5
+        v_max = 1.0
         u_max = 1.0
         self.compute_control(self.x0, self.ref, v_max, u_max)
         self.publish_control()
